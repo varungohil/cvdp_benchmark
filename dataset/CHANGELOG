@@ -1,0 +1,39 @@
+# CVDP Benchmark Dataset Changelog
+
+## v1.0.2
+
+### Added
+- Split all datasets into commercial and non-commercial variants
+
+---
+
+## v1.0.1
+
+### Added
+- **9 datapoints** in non-agentic code generation:
+  - cvdp_copilot_perceptron_0019
+  - cvdp_copilot_radix2_div_0001
+  - cvdp_copilot_one_hot_address_0001
+  - cvdp_copilot_icache_controller_0004
+  - cvdp_copilot_cellular_automata_0017
+  - cvdp_copilot_run_length_0007
+  - cvdp_copilot_scrambler_0024
+  - cvdp_copilot_Serial_Line_Converter_0019
+  - cvdp_copilot_caesar_cipher_0001
+
+### Changed
+- Enhanced test harnesses for **6 datapoints**:
+  - cvdp_agentic_event_storing_0001
+  - cvdp_agentic_alu_0003
+  - cvdp_agentic_gf_multiplier_0003
+  - cvdp_agentic_phase_rotation_0004
+  - cvdp_copilot_GFCM_0003
+  - cvdp_copilot_complex_multiplier_0014
+
+---
+
+## v1.0.0 (Initial Release)
+
+### Added
+- Initial release of CVDP benchmark dataset
+

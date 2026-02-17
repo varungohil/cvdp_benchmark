@@ -12,6 +12,7 @@ from .openai_llm import OpenAI_Instance
 from .openai_llm_responses import OpenAI_Responses_Instance
 from .subjective_score_model import SubjectiveScoreModel_Instance
 from .local_inference_model import LocalInferenceModel
+from .deepseek_llm import DeepSeek_Instance
 
 logging.basicConfig(level=logging.INFO)
 
@@ -31,6 +32,7 @@ class ModelFactory:
             "gpt-4o": self._create_openai_instance,
             "gpt-4o-mini": self._create_openai_instance,
             "o3-pro": self._create_openai_responses_instance,
+            "gpt-5": self._create_openai_responses_instance,
             
             # Subjective scoring model
             "sbj_score": self._create_subjective_score_instance,
@@ -38,6 +40,13 @@ class ModelFactory:
             # Local inference models
             "local_export": self._create_local_export_instance,
             "local_import": self._create_local_import_instance,
+            
+            # DeepSeek models
+            "deepseek-chat": self._create_deepseek_instance,
+            "deepseek-coder": self._create_deepseek_instance,
+            "deepseek-reasoner": self._create_deepseek_instance,
+            "deepseek-v3": self._create_deepseek_instance,
+            "deepseek-r1": self._create_deepseek_instance,
         }
 
     def create_model(self, model_name: str, context: Any = None, key: Optional[str] = None, **kwargs) -> Any:
@@ -97,6 +106,10 @@ class ModelFactory:
         """Create a Local Import model instance"""
         file_path = kwargs.get('file_path', 'responses.jsonl')
         return LocalInferenceModel(context=context, mode='import', file_path=file_path, key=key, model=model_name)
+    
+    def _create_deepseek_instance(self, model_name: str, context: Any, key: Optional[str], **kwargs) -> DeepSeek_Instance:
+        """Create a DeepSeek model instance"""
+        return DeepSeek_Instance(context=context, key=key, model=model_name)
 
     def register_model_type(self, model_identifier: str, factory_method):
         """

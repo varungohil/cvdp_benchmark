@@ -2,6 +2,7 @@ pyyaml
 requests
 pydantic
 openai
+anthropic
 python-dotenv
 psutil
 nltk
@@ -9,3 +10,4 @@ tabulate
 numpy
 colorama
 ruamel.yaml
+nltk
